@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+h1 {
+  display: block;
+  margin-top: 200px;
+}
+button {
+  display: block;
+  margin: 100px;
+}
