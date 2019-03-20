@@ -2,12 +2,47 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Counter from './App';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
+const initialState = {
+	count: 100000
+};
+
+function reducer(state = initialState, action) {
+	switch(action.type){
+		case "CREDIT":  
+			return {
+				count: state.count + 10000
+			}
+		case "DEBIT":
+				return {
+				count: state.count - 10000
+			}
+		case "DONATE":
+				return {
+				count: state.count - state.count
+			}		
+		default:
+			return state;
+	}
+
+	// function checkCount(state = initialState){
+	// 	var debit = document.getElementById('debit');
+	// 	// var donate = document.getElementById('donate');
+	// 	return debit.setAttribute("disabled","");
+	// }
+	// if (state.count===0) {
+	// 	return checkCount();
+	// }
+}
+
+const store = createStore(reducer);
 const App = () => (
-	<div>
+	<Provider store={store}>
 		<Counter />
-	</div>
+	</Provider>
 	);
 ReactDOM.render(<App />, document.getElementById('root'));
 
