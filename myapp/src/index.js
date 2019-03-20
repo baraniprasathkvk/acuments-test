@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Counter from './App';
 import * as serviceWorker from './serviceWorker';
 
+const App = () => (
+	<div>
+		<Counter />
+	</div>
+	);
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
