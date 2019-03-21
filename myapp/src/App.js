@@ -38,7 +38,7 @@ class Balance extends React.Component {
         <h1 className="count" id="balance">{this.props.count}</h1>
         <button type="button" className="btn btn-success" onClick={this.credit}>Credit $10000</button>
         <button type="button" id="debit" className="btn btn-danger" onClick={this.debit} data-toggle="tooltip" data-placement="top" title="You cannot reduce the money from 0 balance" >Debit $10000</button>
-        <button type="button" id="donate" className="btn btn-warning" onClick={this.donate}>To Charity</button>
+        <button type="button" id="donate" className="btn btn-warning" onClick={this.donate}>To the Charity</button>
       </div>
     );
   }
